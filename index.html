@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!-- pennys.dad
+     Penny Wrenn | Curtis Lee Wrenn, Sr. | February 14, 1930 — September 9, 2021
+     Built: March 22, 2026
+     Images: ../Daddy_Dementia Deserves Better/Images_Daddy_Dementia Deserves Better/
+     Essay draft included. Replace with final version before publication.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pennys.dad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #FF1C8E;
+      --pink-deep:  #CC1472;
+      --pink-soft:  #FF6DB5;
+      --blush:      #FFF0F7;
+      --blush-mid:  #FFD6EE;
+      --ink:        #1A1A1A;
+      --white:      #FFFFFF;
+      --teal:       #1a4a47;
+      --gray:       #888;
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(255,28,142,0.15) 0%,
+        transparent 30%,
+        transparent 55%,
+        rgba(0,0,0,0.55) 100%
+      );
+    }
+    .hero-title {
+      position: absolute;
+      bottom: 2.5rem; left: 2.5rem;
+      right: 2.5rem;
+    }
+    .hero-title h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .hero-title h1 strong {
+      font-weight: 600;
+      font-style: normal;
+      color: var(--pink);
+    }
+    .hero-scroll {
+      display: block;
+      margin-top: 1rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ─── VOICEMAIL ─── */
+    .voicemail {
+      background: var(--blush);
+      padding: 5rem 2.5rem;
+      border-top: 4px solid var(--pink);
+    }
+    .voicemail-inner {
+      max-width: 720px; margin: 0 auto; text-align: center;
+    }
+    .voicemail-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 2rem;
+    }
+    .voicemail-text {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .voicemail-attr {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--gray);
+      letter-spacing: 0.04em;
+    }
+    .voicemail-attr strong { color: var(--pink-deep); }
+
+    /* ─── NAME / DATES ─── */
+    .nameplate {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 60vh;
+    }
+    @media (max-width: 700px) { .nameplate { grid-template-columns: 1fr; } }
+    .nameplate-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      min-height: 350px;
+    }
+    .nameplate-text {
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem;
+    }
+    .nameplate-motto {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--pink);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+    .nameplate-name {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .nameplate-dates {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 2;
+    }
+    .nameplate-dates span {
+      display: block;
+      font-size: 0.62rem;
+      color: var(--pink);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ─── DADDY FULL-BLEED ─── */
+    .daddy-word {
+      width: 100%;
+      max-height: 80vh;
+      overflow: hidden;
+    }
+    .daddy-word img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ─── ESSAY ─── */
+    .essay {
+      background: var(--white);
+      padding: 6rem 2.5rem;
+    }
+    .essay-inner {
+      max-width: 680px; margin: 0 auto;
+    }
+    .essay-kicker {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 2rem;
+    }
+    .essay h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 2.5rem;
+    }
+    .essay-divider {
+      width: 40px; height: 3px;
+      background: var(--pink);
+      margin: 2.5rem 0;
+    }
+    .essay p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #2a2a2a;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .essay p:first-of-type::first-letter {
+      font-family: var(--serif);
+      font-size: 4.5rem;
+      font-weight: 600;
+      float: left;
+      line-height: 0.75;
+      margin-right: 0.1em;
+      margin-top: 0.15em;
+      color: var(--pink);
+    }
+    .essay-pull {
+      margin: 3rem 0;
+      padding: 2rem 2rem 2rem 2.5rem;
+      border-left: 4px solid var(--pink);
+      background: var(--blush);
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    /* ─── PHOTO WITH PENNY ─── */
+    .portrait-strip {
+      background: var(--pink);
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 55vh;
+    }
+    @media (max-width: 700px) { .portrait-strip { grid-template-columns: 1fr; } }
+    .portrait-strip img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      min-height: 320px;
+    }
+    .portrait-caption {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem;
+    }
+    .portrait-caption p {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+    .portrait-caption small {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ─── TRIPTYCH / FADE ─── */
+    .triptych {
+      background: var(--ink);
+      padding: 5rem 2.5rem;
+    }
+    .triptych-img {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      display: block;
+    }
+    .triptych-caption {
+      max-width: 620px; margin: 0 auto;
+      text-align: center;
+    }
+    .triptych-caption p {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .triptych-caption small {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--pink-soft);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ─── PINK COLLAGE FULL-BLEED ─── */
+    .collage-full {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .collage-full img {
+      width: 100%;
+      display: block;
+      max-height: 85vh;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ─── DDB BRIDGE ─── */
+    .ddb-bridge {
+      background: var(--teal);
+      padding: 5rem 2.5rem;
+      text-align: center;
+    }
+    .ddb-bridge-inner { max-width: 600px; margin: 0 auto; }
+    .ddb-bridge-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink-soft);
+      margin-bottom: 1.5rem;
+    }
+    .ddb-bridge h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+    .ddb-bridge p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .btn-pink {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.85rem 2.25rem;
+      background: var(--pink);
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+    .btn-pink:hover { background: var(--pink-deep); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .footer-dates {
+      font-size: 0.72rem;
+      color: var(--pink-soft);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links {
+      display: flex; gap: 2rem; justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-pink-bar {
+      width: 100%; height: 4px;
+      background: var(--pink);
+      margin-bottom: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO: Video lede — autoplay, muted, looped ═══ -->
+  <section class="hero">
+    <video class="hero-video"
+           autoplay muted loop playsinline preload="auto"
+           poster="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20Collage/2.png">
+      <source src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20Collage/Video.mp4"
+              type="video/mp4" />
+      <!-- fallback if video doesn't load -->
+      <img src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20Collage/2.png"
+           alt="Daddy Collage — Curtis Lee Wrenn, Sr." style="width:100%;height:100%;object-fit:cover;" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-title">
+      <h1><strong>pennys</strong>.dad</h1>
+      <span class="hero-scroll">Curtis Lee Wrenn, Sr. &nbsp;·&nbsp; February 14, 1930</span>
+    </div>
+  </section>
+
+  <!-- ═══ VOICEMAIL ═══ -->
+  <section class="voicemail">
+    <div class="voicemail-inner">
+      <p class="voicemail-label">A voicemail he left me. October 6, 2009.</p>
+      <p class="voicemail-text">
+        "Be good to yourself. Take care of one daughter.
+        Love the world. Love yourself. Be good to yourself.
+        Call me when you get a chance.
+        Love you very much. Thank you."
+      </p>
+      <p class="voicemail-attr">
+        — <strong>Curtis Lee Wrenn, Sr.</strong> &nbsp;·&nbsp; 1:38 p.m.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ NAME AND DATES ═══ -->
+  <div class="nameplate">
+    <img class="nameplate-img"
+         src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20(funeral)/1.png"
+         alt="Curtis Lee Wrenn, Sr. — funeral cover portrait" />
+    <div class="nameplate-text">
+      <p class="nameplate-motto">Keep On Keepin On</p>
+      <h2 class="nameplate-name">Curtis Lee<br />Wrenn, Sr.</h2>
+      <div class="nameplate-dates">
+        <span>Born</span>
+        February 14, 1930
+        <span style="margin-top:1rem;">Died</span>
+        September 9, 2021
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DADDY TYPOGRAPHIC ═══ -->
+  <div class="daddy-word">
+    <img src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20Graphic/3.png"
+         alt="DADDY — photo typography" />
+  </div>
+
+  <!-- ═══ ESSAY ═══ -->
+  <section class="essay">
+    <div class="essay-inner">
+      <p class="essay-kicker">By Penny Wrenn</p>
+      <h2>The domain name is the first sentence.</h2>
+      <div class="essay-divider"></div>
+
+      <p>There is a specific kind of possessive that does not let go. Not <em>my father</em>, not <em>the late</em>, not <em>patient in room 214</em>. <em>Pennys.dad</em>. No apostrophe because the internet doesn't allow punctuation in domain names, and I find that absence fitting — ownership that doesn't require a mark. This is where he lives now. On my server. In my name. Still mine.</p>
+
+      <p>Curtis Lee Wrenn, Sr. was born on Valentine's Day, 1930, in a country that had not yet decided he was fully human. He outlived that country's refusal to see him. He became a man who left voicemails that sounded like blessings. <em>Be good to yourself. Love the world. Love yourself.</em> Not once — he said it twice in the same message, the way he said important things. As if the first time were for the record and the second were for you.</p>
+
+      <p>I am his daughter. Specifically, I am The Supplemental — the word I have given to the position I held throughout the years of his decline. Not the primary caregiver. Not the person with the healthcare proxy. Not the one who signed the forms or had official standing in the system that was managing his life. I was the one who called. The one who visited. The one who noticed things and had nowhere to put them. The one standing in the hallway, watching, without a lever to pull.</p>
+
+      <div class="essay-pull">
+        Most people in a dementia situation are not the person with the clipboard. They are the daughter who calls every Sunday. I was that daughter. And what I watched from that position — what I learned, what I was unable to stop — is the reason everything else that follows this site exists.
+      </div>
+
+      <p>My father fell. When you are old and your mind is going, falling is not an accident. It is a verdict. The fall is the moment the system officially takes over, and the family officially steps back, and the paperwork begins. He woke up in a nursing home not knowing how he got there. At some point he asked for a copy of his own records. He was denied. He had never been declared legally incompetent. He had never been the subject of a guardianship. No court had removed his rights. No formal process had stripped him of standing. He was a man whose rights were legally intact — and when he asked to see his own file, the system said no. That is not a bureaucratic error. That is the system working as it was designed, assuming that a man in a facility with undocumented cognitive decline no longer needed to be treated as a person with the right to ask questions about his own care.</p>
+
+      <p>I read his paperwork. I have a journalism background. I knew how to read paperwork. What I found was that dementia had been <em>managed</em> — by nurses, in behavioral notes, in the careful language of a facility that had sold his family on memory care as a product — but never <em>diagnosed</em> as a medical condition requiring a care protocol, a rights review, a legal safeguard. The facility had both the services and the brochure. It did not have the clinical record that should have come first.</p>
+
+      <p>The only time the word <em>dementia</em> appeared in any official document about my father's care was on his death certificate.</p>
+
+      <div class="essay-pull">
+        That sentence is not a paragraph. It is the founding document of everything I have built since.
+      </div>
+
+      <p>I am a writer. I am a strategist. I spent twenty years helping institutions tell their stories — knowing which details matter, which language triggers action, which frame changes what an audience believes is possible. I turned that practice on my father's situation. I researched. I read the Lancet Commission. I read the federal GUIDE Model. I read patient rights statutes and proxy decision laws and nursing home admission agreements. I read all of it the way I should have been able to read his care record — with someone standing beside me who could explain what I was seeing.</p>
+
+      <p>There was no one. There is almost never anyone. That is the design failure.</p>
+
+      <p>So I started buying domain names. It is a very Penny Wrenn thing to do — to see a gap in the world and immediately stake a claim in it. <em>Dementiadeservesbetter.com</em>. <em>Dementia.chat</em>. <em>Pennys.dad</em>. The domains are a promise to my father that what happened to him will be useful to someone else. That his story will not disappear with him. That his mind — the mind that said <em>love the world, love yourself</em> and meant it, the mind that the disease took quietly before anyone named it — will be remembered not only by me, but by the system that failed to protect it.</p>
+
+      <p>He died on September 9, 2021. He was ninety-one years old. He was, until the end, someone who could still make you feel like the most important person in the room. That is not a small thing to lose. That is not a small thing to let pass without documentation.</p>
+
+      <p>This is the documentation.</p>
+    </div>
+  </section>
+
+  <!-- ═══ PORTRAIT WITH PENNY ═══ -->
+  <div class="portrait-strip">
+    <img src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20Graphic/photo-output_6.png"
+         alt="Penny and Curtis — close, present, together" />
+    <div class="portrait-caption">
+      <p>"He was, until the end, someone who could still make you feel like the most important person in the room."</p>
+      <small>pennys.dad &nbsp;·&nbsp; Penny Wrenn</small>
+    </div>
+  </div>
+
+  <!-- ═══ COLLAGE PAGE 1 FULL BLEED ═══ -->
+  <div class="collage-full">
+    <img src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20Collage/1.png"
+         alt="Daddy Collage — a life" />
+  </div>
+
+  <!-- ═══ TRIPTYCH / THE FADE ═══ -->
+  <section class="triptych">
+    <img class="triptych-img"
+         src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/DaddyDementia%20Deserves%20Better/1.png"
+         alt="Curtis Wrenn — color, then gray, then gray. The fade." />
+    <div class="triptych-caption">
+      <p>The only time dementia appeared in his care record was on his death certificate. This is what the disease does — it takes a specific mind, in a specific body, from a specific family — and the system let it happen without ever writing the word down.</p>
+      <small>dementia deserves better</small>
+    </div>
+  </section>
+
+  <!-- ═══ LOVE ME SOME DADDY ═══ -->
+  <div class="collage-full" style="background:var(--blush);">
+    <img src="../Daddy_Dementia%20Deserves%20Better/Images_Daddy_Dementia%20Deserves%20Better/Daddy%20Graphic/1.png"
+         alt="love me some Daddy — photo grid"
+         style="max-height:none; object-fit:contain; background:var(--blush);" />
+  </div>
+
+  <!-- ═══ DDB BRIDGE ═══ -->
+  <section class="ddb-bridge">
+    <div class="ddb-bridge-inner">
+      <p class="ddb-bridge-label">From this site to the work it launched</p>
+      <h2>What happened to my father is a design failure. And it is preventable.</h2>
+      <p>
+        Dementia Deserves Better is the advocacy ecosystem built in Curtis Wrenn's name.
+        For families who are inside this right now. For the people standing in the hallway,
+        the ones calling every Sunday, the ones who read the paperwork and found the gap.
+        There is a place for you there.
+      </p>
+      <a class="btn-pink" href="https://dementiadeservesbetter.com">
+        Visit Dementia Deserves Better →
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-pink-bar"></div>
+    <p class="footer-name">Curtis Lee Wrenn, Sr.</p>
+    <p class="footer-dates">February 14, 1930 &nbsp;·&nbsp; September 9, 2021 &nbsp;·&nbsp; Keep On Keepin On</p>
+    <ul class="footer-links">
+      <li><a href="https://dementiadeservesbetter.com">dementiadeservesbetter.com</a></li>
+      <li><a href="https://dementia.chat">dementia.chat</a></li>
+      <li><a href="https://pennywrenn.com">pennywrenn.com</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
